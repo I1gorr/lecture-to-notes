@@ -20,7 +20,7 @@ RUN bun run build
 FROM nginx:alpine
 
 # Copy compiled output from build stage to nginx html folder
-COPY --from=build /frontend/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Optional: Custom nginx config for single-page apps (React/Vite)
 # Ensures client-side routing works
